@@ -6,7 +6,6 @@
 package model.MarketModel;
 
 import java.util.ArrayList;
-import model.ProductManagement.SolutionOffer;
 
 /**
  *
@@ -14,14 +13,28 @@ import model.ProductManagement.SolutionOffer;
  */
 public class Market {
 
-  ArrayList<SolutionOffer> so;
-  ArrayList<MarketChannelAssignment> channels;
-  ArrayList<String> characteristics;
+  String name;
+  ArrayList<Channel> validchannels;
+  ArrayList<String> characteristics; //a way to describe in plain language what is that group
   ArrayList<Market> submarkets;
   int size;
 
-  public Market(String s) {
-    characteristics = new ArrayList<String>();
-    characteristics.add(s);
+  public Market(String m) {
+      name = m;
+      characteristics = new ArrayList();
+      submarkets = new ArrayList();
+      validchannels = new ArrayList();
   }
+
+  public void addCharactersitic(String c) {
+      characteristics.add(c);
+  }
+
+  public void addValidChannel(Channel c) {
+
+      validchannels.add(c);
+  }
+  
+
 }
+

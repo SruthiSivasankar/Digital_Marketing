@@ -16,37 +16,38 @@ public class ProductsReport {
   ArrayList<ProductSummary> productsummarylist;
 
   public ProductsReport() {
-    productsummarylist = new ArrayList<ProductSummary>();
+      productsummarylist = new ArrayList();
   }
 
   public void addProductSummary(ProductSummary ps) {
-    productsummarylist.add(ps);
+
+      productsummarylist.add(ps);
   }
 
   public ProductSummary getTopProductAboveTarget() {
-    ProductSummary currenttopproduct = null;
+      ProductSummary currenttopproduct = null;
 
-    for (ProductSummary ps : productsummarylist) {
-      if (currenttopproduct == null) {
-        currenttopproduct = ps; // initial step
-      } else if (
-        ps.getNumberAboveTarget() > currenttopproduct.getNumberAboveTarget()
-      ) {
-        currenttopproduct = ps; //we have a new higher total
+      for (ProductSummary ps : productsummarylist) {
+          if (currenttopproduct == null) {
+              currenttopproduct = ps; // initial step 
+          } else if (ps.getNumberAboveTarget() > currenttopproduct.getNumberAboveTarget()) {
+              currenttopproduct = ps; //we have a new higher total
+          }
+
       }
-    }
-    return currenttopproduct;
+      return currenttopproduct;
   }
 
   public ArrayList<ProductSummary> getProductsAlwaysAboveTarget() {
-    ArrayList<ProductSummary> productsalwaysabovetarget = new ArrayList<ProductSummary>(); //temp array list
+      ArrayList<ProductSummary> productsalwaysabovetarget = new ArrayList(); //temp array list
 
-    for (ProductSummary ps : productsummarylist) {
-      if (ps.isProductAlwaysAboveTarget() == true) {
-        productsalwaysabovetarget.add(ps);
+      for (ProductSummary ps : productsummarylist) {
+          if (ps.isProductAlwaysAboveTarget() == true) {
+              productsalwaysabovetarget.add(ps);
+          }
       }
-    }
 
-    return productsalwaysabovetarget;
+      return productsalwaysabovetarget;
   }
+
 }

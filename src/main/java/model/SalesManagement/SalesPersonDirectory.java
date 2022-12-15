@@ -22,7 +22,7 @@ public class SalesPersonDirectory {
     public SalesPersonDirectory(Business d) {
 
         business = d;
-        salespersonlist = new ArrayList<SalesPersonProfile>();
+        salespersonlist = new ArrayList();
 
     }
 

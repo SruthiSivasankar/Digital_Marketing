@@ -27,14 +27,14 @@ public class Order {
     public Order(){}
     
     public Order(CustomerProfile cp) {
-        orderitems = new ArrayList<OrderItem>();
+        orderitems = new ArrayList();
         customer = cp;
         customer.addCustomerOrder(this); //we link the order to the customer
         salesperson = null;
         status = "in process";
     }
     public Order(CustomerProfile cp, SalesPersonProfile ep) {
-        orderitems = new ArrayList<OrderItem>();
+        orderitems = new ArrayList();
         customer = cp;
         salesperson = ep;
         customer.addCustomerOrder(this); //we link the order to the customer
@@ -89,3 +89,4 @@ public void Submit(){
     status = "Submitted";
 }
 }
+

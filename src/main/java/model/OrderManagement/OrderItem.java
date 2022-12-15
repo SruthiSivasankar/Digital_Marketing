@@ -14,6 +14,7 @@ import model.ProductManagement.Product;
 public class OrderItem {
 
     Product selectedproduct;
+    
     int actualPrice;
     int quantity;
 

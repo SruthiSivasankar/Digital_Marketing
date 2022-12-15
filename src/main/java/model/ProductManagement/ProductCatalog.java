@@ -18,12 +18,12 @@ public class ProductCatalog {
 
     public ProductCatalog(String n) {
         type = n;
-         products = new ArrayList<Product>();  ///create the list of elements otherwise it is null
+         products = new ArrayList();  ///create the list of elements otherwise it is null
     }
 // new ProductCatalog(); or new ProductCatalog("Printers");
-    public ProductCatalog() {
+    public ProductCatalog(    ) {
         type = "unknown";
-        products = new ArrayList<Product>();
+        products = new ArrayList();
     }
     public Product newProduct(int fp, int cp, int tp) {
         Product p = new Product(fp, cp, tp);

@@ -21,7 +21,7 @@ public class EmployeeDirectory {
     public EmployeeDirectory(Business d) {
 
         business = d;
-        employeelist = new ArrayList<EmployeeProfile>();
+        employeelist = new ArrayList();
 
     }
 

@@ -6,17 +6,20 @@
 package model.Business;
 
 import java.util.ArrayList;
-import model.CustomerManagement.ChannelCatalog;
+
 import model.CustomerManagement.CustomerDirectory;
-import model.CustomerManagement.MarketCatalog;
+import model.MarketModel.ChannelCatalog;
+import model.MarketModel.MarketCatalog;
+import model.MarketModel.MarketChannelComboCatalog;
+import model.MarketModel.SolutionOfferCatalog;
 import model.MarketingManagement.MarketingPersonDirectory;
 import model.OrderManagement.MasterOrderList;
 import model.Personnel.EmployeeDirectory;
 import model.Personnel.PersonDirectory;
 import model.ProductManagement.ProductSummary;
 import model.ProductManagement.ProductsReport;
-import model.ProductManagement.SolutionOfferCatalog;
 import model.SalesManagement.SalesPersonDirectory;
+import model.SolutionOrders.MasterSolutionOrderList;
 import model.Supplier.Supplier;
 import model.Supplier.SupplierDirectory;
 import model.UserAccountManagement.UserAccountDirectory;
@@ -28,86 +31,118 @@ import model.UserAccountManagement.UserAccountDirectory;
 public class Business {
 
   String name;
-  PersonDirectory persondirectory;
+  PersonDirectory persondirectory; //all people profiles regardless of the role
   MasterOrderList masterorderlist;
   CustomerDirectory customers;
   SupplierDirectory suppliers;
   MarketCatalog marketcatalog;
   ChannelCatalog channelcatalog;
+  MarketChannelComboCatalog marketChannelComboCatalog;
   SolutionOfferCatalog solutionoffercatalog;
   CustomerDirectory customerdirectory;
-  EmployeeDirectory employeedirectory;
+  // EmployeeDirectory employeedirectory;
   SalesPersonDirectory salespersondirectory;
   UserAccountDirectory useraccountdirectory;
-  MarketingPersonDirectory marketingpersondirectory;
+  MasterSolutionOrderList mastersolutionorderlist;
+
 
   public Business(String n) {
-    name = n;
-    masterorderlist = new MasterOrderList();
-    suppliers = new SupplierDirectory();
-    //        solutionoffercatalog = new SolutionOfferCatalog();
-    persondirectory = new PersonDirectory();
-    customerdirectory = new CustomerDirectory(this);
-    salespersondirectory = new SalesPersonDirectory(this);
-    useraccountdirectory = new UserAccountDirectory();
-    marketingpersondirectory = new MarketingPersonDirectory(this);
-    employeedirectory = new EmployeeDirectory(this);
+      name = n;
+      masterorderlist = new MasterOrderList();
+      suppliers = new SupplierDirectory();
+
+      persondirectory = new PersonDirectory();
+      customerdirectory = new CustomerDirectory(this);
+      salespersondirectory = new SalesPersonDirectory(this);
+      useraccountdirectory = new UserAccountDirectory();
+
+      marketcatalog = new MarketCatalog();
+
+      channelcatalog = new ChannelCatalog();
+
+//        Channel c = channelcatalog.newChannel("tv");
+//        market.addValidChannel(c);
+//        c = channelcatalog.newChannel("");
+
+      marketChannelComboCatalog = new MarketChannelComboCatalog();
+//        MarketChannelAssignment mca2 = marketChannelComboCatalog.newMarketChannelCombo(market, c);
+
+      solutionoffercatalog = new SolutionOfferCatalog();
+      mastersolutionorderlist  = new MasterSolutionOrderList();
+
   }
 
   public int getSalesVolume() {
-    return masterorderlist.getSalesVolume();
+      return masterorderlist.getSalesVolume();
+
   }
 
   public PersonDirectory getPersonDirectory() {
-    return persondirectory;
+      return persondirectory;
   }
 
   public UserAccountDirectory getUserAccountDirectory() {
-    return useraccountdirectory;
+      return useraccountdirectory;
   }
 
-  public MarketingPersonDirectory getMarketingPersonDirectory() {
-    return marketingpersondirectory;
-  }
 
   public SupplierDirectory getSupplierDirectory() {
-    return suppliers;
+      return suppliers;
   }
 
   public ProductsReport getSupplierPerformanceReport(String n) {
-    Supplier supplier = suppliers.findSupplier(n);
-    if (supplier == null) {
-      return null;
-    }
-    return supplier.prepareProductsReport();
+      Supplier supplier = suppliers.findSupplier(n);
+      if (supplier == null) {
+          return null;
+      }
+      return supplier.prepareProductsReport();
+
   }
 
-  public ArrayList<ProductSummary> getSupplierProductsAlwaysAboveTarget(
-    String n
-  ) {
-    ProductsReport productsreport = getSupplierPerformanceReport(n);
-    return productsreport.getProductsAlwaysAboveTarget();
+  public ArrayList<ProductSummary> getSupplierProductsAlwaysAboveTarget(String n) {
+
+      ProductsReport productsreport = getSupplierPerformanceReport(n);
+      return productsreport.getProductsAlwaysAboveTarget();
+
   }
 
   public int getHowManySupplierProductsAlwaysAboveTarget(String n) {
-    ProductsReport productsreport = getSupplierPerformanceReport(n); // see above
-    int i = productsreport.getProductsAlwaysAboveTarget().size(); //return size of the arraylist
-    return i;
+      ProductsReport productsreport = getSupplierPerformanceReport(n); // see above
+      int i = productsreport.getProductsAlwaysAboveTarget().size(); //return size of the arraylist
+      return i;
   }
 
   public CustomerDirectory getCustomerDirectory() {
-    return customerdirectory;
+      return customerdirectory;
   }
 
   public SalesPersonDirectory getSalesPersonDirectory() {
-    return salespersondirectory;
+      return salespersondirectory;
   }
 
   public MasterOrderList getMasterOrderList() {
-    return masterorderlist;
+      return masterorderlist;
   }
 
-  public EmployeeDirectory getEmployeeDirectory() {
-    return employeedirectory;
+  public MarketCatalog getMarketCatalog() {
+      return marketcatalog;
   }
+
+  public ChannelCatalog getChannelCatalog() {
+      return channelcatalog;
+  }
+  public SolutionOfferCatalog getSolutionOfferCatalog(){
+      return solutionoffercatalog;
+  }
+  public MarketChannelComboCatalog getMarketChannelComboCatalog() {
+
+      return marketChannelComboCatalog;
+  }
+  public MasterSolutionOrderList getMasterSolutionOrderList(){
+      return mastersolutionorderlist;
+  }
+  //       public EmployeeDirectory getEmployeeDirectory() {
+  //      return employeedirectory;
+  //  }
+
 }
