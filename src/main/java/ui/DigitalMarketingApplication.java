@@ -13,7 +13,6 @@ import model.Business.ConfigureABusiness;
  * @author kal bugrara
  */
 public class DigitalMarketingApplication {
-
   /**
    * @param args the command line arguments
    */

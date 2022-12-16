@@ -66,6 +66,9 @@ public class ConfigureABusiness {
     Person person008 = persondirectory.newPerson("Company 4");
 
     Person customer01 = persondirectory.newPerson("Customer 01");
+    Person customer02 = persondirectory.newPerson("Customer 02");
+    Person customer03 = persondirectory.newPerson("Customer 03");
+    Person customer04 = persondirectory.newPerson("Customer 04");
 
     CustomerDirectory customerdirectory = business.getCustomerDirectory();
     // CustomerProfile customerprofile01 =
@@ -125,8 +128,6 @@ Product s3p6 = s3ProductCatalog.newProduct("Maggi", 20, 45, 30);
 Product s3p7 = s3ProductCatalog.newProduct("Gourmet", 50, 70, 60);
     // ----------------
 
-    UserAccountDirectory uadirectory = business.getUserAccountDirectory();
-    UserAccount ua1 = uadirectory.newUserAccount(salespersonprofile, "Sales", "XXXX");
 
    // Process Orders on behalf of sales person and customer
 MasterOrderList masterorderlist = business.getMasterOrderList();   
@@ -167,16 +168,16 @@ OrderItem oi119 = order111.newOrderItem(s3p2, 15, 4);
 OrderItem oi120 = order111.newOrderItem(s2p5, 700, 1);
 
 
-MarketCatalog mc = business.getMarketCatalog();
+    MarketCatalog mc = business.getMarketCatalog();
     ChannelCatalog channelcatalog = business.getChannelCatalog();
     MarketChannelComboCatalog mccc = business.getMarketChannelComboCatalog();
 
     Market teenmarket = mc.newMarket("Teenagers");
-    Market collegegrads = mc.newMarket("College Grads");
-    Market millenial = mc.newMarket("Millenial");
+    Market collegegrads = mc.newMarket("College Graduate");
+    Market genZ = mc.newMarket("Gen-Z");
     Market seniors =mc.newMarket("Seniors");
 
-    Channel tvchannel = channelcatalog.newChannel("Tv");
+    Channel tvchannel = channelcatalog.newChannel("Television");
     Channel webchannel = channelcatalog.newChannel("Web");
     Channel radiochannel = channelcatalog.newChannel("Radio");
     Channel socialmediachannel = channelcatalog.newChannel("Social Media");
@@ -189,10 +190,10 @@ MarketCatalog mc = business.getMarketCatalog();
     collegegrads.addValidChannel(tvchannel);
     collegegrads.addValidChannel(radiochannel);
     collegegrads.addValidChannel(socialmediachannel);
-    millenial.addValidChannel(webchannel);
-    millenial.addValidChannel(tvchannel);
-    millenial.addValidChannel(radiochannel);
-    millenial.addValidChannel(socialmediachannel);
+    genZ.addValidChannel(webchannel);
+    genZ.addValidChannel(tvchannel);
+    genZ.addValidChannel(radiochannel);
+    genZ.addValidChannel(socialmediachannel);
     seniors.addValidChannel(webchannel);
     seniors.addValidChannel(tvchannel);
     seniors.addValidChannel(radiochannel);
@@ -208,10 +209,10 @@ MarketCatalog mc = business.getMarketCatalog();
     MarketChannelAssignment radiochannelcollegegradsmarket = mccc.newMarketChannelCombo(collegegrads, radiochannel);
     MarketChannelAssignment socialmediachannelcollegegradsmarket = mccc.newMarketChannelCombo(collegegrads, socialmediachannel);
 
-    MarketChannelAssignment tvchannelmillenialmarket = mccc.newMarketChannelCombo(millenial, tvchannel);
-    MarketChannelAssignment webchannelmillenialmarket = mccc.newMarketChannelCombo(millenial, webchannel);
-    MarketChannelAssignment radiochannelmillenialmarket = mccc.newMarketChannelCombo(millenial, radiochannel);
-    MarketChannelAssignment socialmediachannelmillenialmarket = mccc.newMarketChannelCombo(millenial, socialmediachannel);
+    MarketChannelAssignment tvchannelgenZmarket = mccc.newMarketChannelCombo(genZ, tvchannel);
+    MarketChannelAssignment webchannelgenZmarket = mccc.newMarketChannelCombo(genZ, webchannel);
+    MarketChannelAssignment radiochannelgenZmarket = mccc.newMarketChannelCombo(genZ, radiochannel);
+    MarketChannelAssignment socialmediachannelgenZmarket = mccc.newMarketChannelCombo(genZ, socialmediachannel);
 
     MarketChannelAssignment tvchannelseniorsmarket = mccc.newMarketChannelCombo(seniors, tvchannel);
     MarketChannelAssignment webchannelseniorsmarket = mccc.newMarketChannelCombo(seniors, webchannel);
@@ -227,103 +228,103 @@ MarketCatalog mc = business.getMarketCatalog();
     //teen
 
     SolutionOffer solutiontvteen = solutionoffercatalog.newSolutionOffer(tvchannelteenmarket);
-    solutiontvteen.addProduct(s1p10);
     solutiontvteen.addProduct(s2p10);
-    solutiontvteen.addProduct(s3p7);         
-    solutiontvteen.setTotalPrice(1099); 
+    solutiontvteen.addProduct(s1p1);
+    solutiontvteen.addProduct(s3p6);         
+    solutiontvteen.setTotalPrice(1000); 
 
     SolutionOffer solutionwebteen = solutionoffercatalog.newSolutionOffer(webchannelteenmarket);
-    solutionwebteen.addProduct(s1p10);
     solutionwebteen.addProduct(s2p10);
-    solutionwebteen.addProduct(s3p7);
-    solutionwebteen.setTotalPrice(949); 
+    solutionwebteen.addProduct(s1p1);
+    solutionwebteen.addProduct(s3p6);
+    solutionwebteen.setTotalPrice(900); 
 
     SolutionOffer solutionradioteen = solutionoffercatalog.newSolutionOffer(radiochannelteenmarket);
-    solutionradioteen.addProduct(s1p10);
     solutionradioteen.addProduct(s2p10);
-    solutionradioteen.addProduct(s3p7);
-    solutionradioteen.setTotalPrice(999);
+    solutionradioteen.addProduct(s1p1);
+    solutionradioteen.addProduct(s3p6);
+    solutionradioteen.setTotalPrice(950);
 
     SolutionOffer solutionsocialmediateen = solutionoffercatalog.newSolutionOffer(socialmediachannelteenmarket);
-    solutionsocialmediateen.addProduct(s1p10);
     solutionsocialmediateen.addProduct(s2p10);
-    solutionsocialmediateen.addProduct(s3p7);
-    solutionradioteen.setTotalPrice(899);
+    solutionsocialmediateen.addProduct(s1p1);
+    solutionsocialmediateen.addProduct(s3p6);
+    solutionradioteen.setTotalPrice(800);
 
     //collegegrads
 
     SolutionOffer solutiontvcollegegrads = solutionoffercatalog.newSolutionOffer(tvchannelcollegegradsmarket);
-    solutiontvcollegegrads.addProduct(s1p9);
+    solutiontvcollegegrads.addProduct(s1p8);
     solutiontvcollegegrads.addProduct(s2p9);
-    solutiontvcollegegrads.addProduct(s3p6);
+    solutiontvcollegegrads.addProduct(s3p7);
     solutiontvcollegegrads.setTotalPrice(1500);
 
     SolutionOffer solutionwebcollegegrads = solutionoffercatalog.newSolutionOffer(webchannelcollegegradsmarket);
-    solutionwebcollegegrads.addProduct(s1p9);
+    solutionwebcollegegrads.addProduct(s1p8);
     solutionwebcollegegrads.addProduct(s2p9);
-    solutionwebcollegegrads.addProduct(s3p6);
+    solutionwebcollegegrads.addProduct(s3p7);
     solutionwebcollegegrads.setTotalPrice(1300);
 
     SolutionOffer solutionradiocollegegrads = solutionoffercatalog.newSolutionOffer(radiochannelcollegegradsmarket);
-    solutionradiocollegegrads.addProduct(s1p9);
+    solutionradiocollegegrads.addProduct(s1p8);
     solutionradiocollegegrads.addProduct(s2p9);
-    solutionradiocollegegrads.addProduct(s3p6);
+    solutionradiocollegegrads.addProduct(s3p7);
     solutionwebcollegegrads.setTotalPrice(1150);
 
     SolutionOffer solutionsocialmediacollegegrads = solutionoffercatalog.newSolutionOffer(socialmediachannelcollegegradsmarket);
-    solutionsocialmediacollegegrads.addProduct(s1p9);
+    solutionsocialmediacollegegrads.addProduct(s1p8);
     solutionsocialmediacollegegrads.addProduct(s2p9);
-    solutionsocialmediacollegegrads.addProduct(s3p6);
+    solutionsocialmediacollegegrads.addProduct(s3p7);
     solutionsocialmediacollegegrads.setTotalPrice(900);
 
-    //millenials
-    SolutionOffer solutiontvmillenial = solutionoffercatalog.newSolutionOffer(tvchannelmillenialmarket);
-    solutiontvmillenial.addProduct(s1p9);
-    solutiontvmillenial.addProduct(s2p9);
-    solutiontvmillenial.addProduct(s3p6);
-    solutiontvmillenial.setTotalPrice(950);
+    //genZs
+    SolutionOffer solutiontvgenZ = solutionoffercatalog.newSolutionOffer(tvchannelgenZmarket);
+    solutiontvgenZ.addProduct(s1p8);
+    solutiontvgenZ.addProduct(s2p9);
+    solutiontvgenZ.addProduct(s3p7);
+    solutiontvgenZ.setTotalPrice(950);
 
-    SolutionOffer solutionradiomillenial = solutionoffercatalog.newSolutionOffer(radiochannelmillenialmarket);
-    solutionradiomillenial.addProduct(s1p9);
-    solutionradiomillenial.addProduct(s2p9);
-    solutionradiomillenial.addProduct(s3p6);
-    solutionradiomillenial.setTotalPrice(900);
+    SolutionOffer solutionradiogenZ = solutionoffercatalog.newSolutionOffer(radiochannelgenZmarket);
+    solutionradiogenZ.addProduct(s1p8);
+    solutionradiogenZ.addProduct(s2p9);
+    solutionradiogenZ.addProduct(s3p7);
+    solutionradiogenZ.setTotalPrice(900);
 
-    SolutionOffer solutionwebmillenial = solutionoffercatalog.newSolutionOffer(webchannelmillenialmarket);
-    solutionwebmillenial.addProduct(s1p9);
-    solutionwebmillenial.addProduct(s2p9);
-    solutionwebmillenial.addProduct(s3p6);
-    solutionwebmillenial.setTotalPrice(850);
+    SolutionOffer solutionwebgenZ = solutionoffercatalog.newSolutionOffer(webchannelgenZmarket);
+    solutionwebgenZ.addProduct(s1p8);
+    solutionwebgenZ.addProduct(s2p9);
+    solutionwebgenZ.addProduct(s3p7);
+    solutionwebgenZ.setTotalPrice(850);
 
-    SolutionOffer solutionsocialmediamillenial = solutionoffercatalog.newSolutionOffer(socialmediachannelmillenialmarket);
-    solutionsocialmediamillenial.addProduct(s1p9);
-    solutionsocialmediamillenial.addProduct(s2p9);
-    solutionsocialmediamillenial.addProduct(s3p6);
-    solutionsocialmediamillenial.setTotalPrice(600);
+    SolutionOffer solutionsocialmediagenZ = solutionoffercatalog.newSolutionOffer(socialmediachannelgenZmarket);
+    solutionsocialmediagenZ.addProduct(s1p8);
+    solutionsocialmediagenZ.addProduct(s2p9);
+    solutionsocialmediagenZ.addProduct(s3p7);
+    solutionsocialmediagenZ.setTotalPrice(600);
 
     //seniors
     SolutionOffer solutiontvseniors = solutionoffercatalog.newSolutionOffer(tvchannelseniorsmarket);
-    solutiontvseniors.addProduct(s1p9);
+    solutiontvseniors.addProduct(s1p8);
     solutiontvseniors.addProduct(s2p9);
-    solutiontvseniors.addProduct(s3p6);
+    solutiontvseniors.addProduct(s3p7);
     solutiontvseniors.setTotalPrice(1600);
 
     SolutionOffer solutionradioseniors = solutionoffercatalog.newSolutionOffer(radiochannelseniorsmarket);
-    solutionradioseniors.addProduct(s1p9);
+    solutionradioseniors.addProduct(s1p8);
     solutionradioseniors.addProduct(s2p9);
-    solutionradioseniors.addProduct(s3p6);
+    solutionradioseniors.addProduct(s3p7);
     solutionradioseniors.setTotalPrice(1450);
 
     SolutionOffer solutionwebseniors = solutionoffercatalog.newSolutionOffer(webchannelseniorsmarket);
-    solutionwebseniors.addProduct(s1p9);
+    solutionwebseniors.addProduct(s1p8);
     solutionwebseniors.addProduct(s2p9);
-    solutionwebseniors.addProduct(s3p6);
+    solutionwebseniors.addProduct(s3p7);
     solutionwebseniors.setTotalPrice(1200);
 
     SolutionOffer solutionsocialmediaseniors = solutionoffercatalog.newSolutionOffer(socialmediachannelseniorsmarket);
-    solutionsocialmediaseniors.addProduct(s1p9);
+    solutionsocialmediaseniors.addProduct(s1p8);
     solutionsocialmediaseniors.addProduct(s2p9);
-    solutionsocialmediaseniors.addProduct(s3p6);
+    solutionsocialmediaseniors.addProduct(s3p7);
     solutionsocialmediaseniors.setTotalPrice(1400);
 
 //creating orders for solution orders
@@ -369,13 +370,13 @@ MarketCatalog mc = business.getMarketCatalog();
     SolutionOrder so13 = msol.newSolutionOrder(solutionwebcollegegrads, webchannelcollegegradsmarket);
     so13.getSolutionPrice();
 
-    SolutionOrder so28 = msol.newSolutionOrder(solutiontvmillenial, tvchannelmillenialmarket);
+    SolutionOrder so28 = msol.newSolutionOrder(solutiontvgenZ, tvchannelgenZmarket);
     so28.getSolutionPrice();
-    SolutionOrder so30 = msol.newSolutionOrder(solutionradiomillenial, radiochannelmillenialmarket);
-    so30.getSolutionPrice();
-    SolutionOrder so32 = msol.newSolutionOrder(solutionwebmillenial, radiochannelmillenialmarket);
+    SolutionOrder so31 = msol.newSolutionOrder(solutionradiogenZ, radiochannelgenZmarket);
+    so31.getSolutionPrice();
+    SolutionOrder so32 = msol.newSolutionOrder(solutionwebgenZ, radiochannelgenZmarket);
     so32.getSolutionPrice();
-    SolutionOrder so34 = msol.newSolutionOrder(solutionsocialmediamillenial, socialmediachannelmillenialmarket);
+    SolutionOrder so34 = msol.newSolutionOrder(solutionsocialmediagenZ, socialmediachannelgenZmarket);
     so34.getSolutionPrice();
 
 
@@ -422,114 +423,131 @@ System.out.println("Hello! Welcome to COSTCO");
     Scanner sc = new Scanner(System.in);
     String key = sc.nextLine();
     if (key.equals("1")) {
-      System.out.println("Please select what category of target audience are you ? ");
-      System.out.println("1. Teen     2. College grad   3. Millenial   4. Seniors");
+      System.out.println("Please select which age category of Customer you are : ");
+      System.out.println("1. Teen     2. College Graduate   3. Gen-Z   4. Seniors");
           Scanner sc1 = new Scanner(System.in);
           //teen
           String key1 =sc1.nextLine();
              if (key1.equals("1")) { 
-             System.out.println("how did you hear about us ?");
-             System.out.println("1. TV      2. Radio       3.Web         4.Social media");
+             System.out.println("How did you get to know about us ?");
+             System.out.println("1. Television      2. Radio       3.Web         4.Social media");
             Scanner sc2 = new Scanner(System.in);
               String key2 = sc2.nextLine();
                 if (key2.equals("1")) {
-                    System.out.println("You have selected teen tv so we have this price for you ");
+                    System.out.println("Based on your selection, we have this price for you ");
+                    System.out.println("Showing teen television solution ");
+                    System.out.println(solutiontvteen.getProduct());
                    System.out.println(solutiontvteen.getSolutionPrice());
               
                 }else if (key2.equals("2")) { 
-                    System.out.println("You have selected teen radio we have this price for you ");
-                    System.out.println("show teen radio solution ");
+                    System.out.println("Based on your selection, we have this price for you  ");
+                    System.out.println("Showing teen radio solution ");
+                    System.out.println(solutionradioteen.getProduct());
                     System.out.println(solutionradioteen.getSolutionPrice());
 
                 } else if (key2.equals("3")) { 
-                    System.out.println("You have selected teen web we have this price for you ");
-                    System.out.println("show teen web solution ");
+                    System.out.println("Based on your selection, we have this price for you  ");
+                    System.out.println("Showing teen web solution ");
+                    System.out.println(solutionwebteen.getProduct());
                     System.out.println(solutionwebteen.getSolutionPrice());
 
                 }else if (key2.equals("4")) { 
-                    System.out.println("You have selected teen social media we have this price for you ");
-                    System.out.println("show teen social media solution");
+                    System.out.println("Based on your selection, we have this price for you  ");
+                    System.out.println("Showing teen social media solution");
+                    System.out.println(solutionsocialmediateen.getProduct());
                     System.out.println(solutionsocialmediateen.getSolutionPrice());
                 }
               } 
                 //college grads
                 else if (key1.equals("2")) { 
-                  System.out.println("how did you hear about us ?");
-                  System.out.println("1. TV      2. Radio       3.Web         4.Social media");
+                  System.out.println("How did you get to know about us ?");
+                  System.out.println("1. Television     2. Radio       3.Web         4.Social media");
                   Scanner sc3 = new Scanner(System.in);
                    String key3 = sc3.nextLine();
                      if (key3.equals("1")) {
-                         System.out.println("You have selected college grad tv so we have this price for you ");
-                         System.out.println("show college grad TV solution ");
+                         System.out.println("Based on your selection, we have this price for you  ");
+                         System.out.println("Showing college graduate Television solution ");
+                         System.out.println(solutiontvcollegegrads.getProduct());
                          System.out.println(solutiontvcollegegrads.getSolutionPrice());
 
                      }else if (key3.equals("2")) { 
-                         System.out.println("You have selected college grad radio we have this price for you ");
-                         System.out.println("show college grad radio solution ");
+                         System.out.println("Based on your selection, we have this price for you  ");
+                         System.out.println("Showing college graduate radio solution ");
+                         System.out.println(solutionradiocollegegrads.getProduct());
                          System.out.println(solutionradiocollegegrads.getSolutionPrice());
 
                      } else if (key3.equals("3")) { 
-                         System.out.println("You have selected college grad web we have this price for you ");
-                         System.out.println("show college grad web solution ");
+                         System.out.println("Based on your selection, we have this price for you  ");
+                         System.out.println("Showing college graduate web solution ");
+                         System.out.println(solutionwebcollegegrads.getProduct());
                          System.out.println(solutionwebcollegegrads.getSolutionPrice());
 
                      }else if (key3.equals("4")) { 
-                         System.out.println("You have selected college grad social media we have this price for you ");
-                         System.out.println("show college grad social media solution");
+                         System.out.println("Based on your selection, we have this price for you  ");
+                         System.out.println("Showing college graduate social media solution");
+                         System.out.println(solutionsocialmediacollegegrads.getProduct());
                          System.out.println(solutionsocialmediacollegegrads.getSolutionPrice());
                     }
                   }
-                  //millenials
+                  //genZs
                   else if (key1.equals("3")) { 
-                    System.out.println("how did you hear about us ?");
-                    System.out.println("1. TV      2. Radio       3.Web         4.Social media");
+                    System.out.println("How did you get to know about us ?");
+                    System.out.println("1. Television      2. Radio       3.Web         4.Social media");
                     Scanner sc4 = new Scanner(System.in);
                      String key4 = sc4.nextLine();
                        if (key4.equals("1")) {
-                           System.out.println("You have selected millenials tv so we have this price for you ");
-                           System.out.println("show millenials TV solution ");
-                           System.out.println(solutiontvmillenial.getSolutionPrice());
+                           System.out.println("Based on your selection, we have this price for you  ");
+                           System.out.println("Showing Gen-Z Television solution ");
+                           System.out.println(solutiontvgenZ.getProduct());
+                           System.out.println(solutiontvgenZ.getSolutionPrice());
 
                        }else if (key4.equals("2")) { 
-                           System.out.println("You have selected millenials radio we have this price for you ");
-                           System.out.println("show millenials radio solution ");
-                           System.out.println(solutionradiomillenial.getSolutionPrice());
+                           System.out.println("Based on your selection, we have this price for you  ");
+                           System.out.println("Showing Gen-Z radio solution ");
+                           System.out.println(solutionradiogenZ.getProduct());
+                           System.out.println(solutionradiogenZ.getSolutionPrice());
 
                        } else if (key4.equals("3")) { 
-                           System.out.println("You have selected millenials web we have this price for you ");
-                           System.out.println("show millenials web solution ");
-                           System.out.println(solutionwebmillenial.getSolutionPrice());
+                           System.out.println("Based on your selection, we have this price for you  ");
+                           System.out.println("Showing Gen-Z web solution ");
+                           System.out.println(solutionwebgenZ.getProduct());
+                           System.out.println(solutionwebgenZ.getSolutionPrice());
 
                        }else if (key4.equals("4")) { 
-                           System.out.println("You have selected millenials social media we have this price for you ");
-                           System.out.println("show millenials social media solution");
-                           System.out.println(solutionsocialmediamillenial.getSolutionPrice());
+                           System.out.println("Based on your selection, we have this price for you  ");
+                           System.out.println("Showing Gen-Z social media solution");
+                           System.out.println(solutionsocialmediagenZ.getProduct());
+                           System.out.println(solutionsocialmediagenZ.getSolutionPrice());
                       }
                     }
                     //seniors
                     else if (key1.equals("4")) { 
-                      System.out.println("how did you hear about us ?");
-                      System.out.println("1. TV      2. Radio       3.Web         4.Social media");
+                      System.out.println("How did you get to know about us ?");
+                      System.out.println("1. Television      2. Radio       3.Web         4.Social media");
                       Scanner sc5 = new Scanner(System.in);
                        String key5 = sc5.nextLine();
                          if (key5.equals("1")) {
-                             System.out.println("You have selected seniors tv so we have this price for you ");
-                             System.out.println("show seniors TV solution ");
+                             System.out.println("Based on your selection, we have this price for you  ");
+                             System.out.println("Showing seniors Television solution ");
+                             System.out.println(solutiontvseniors.getProduct());
                              System.out.println(solutiontvseniors.getSolutionPrice());
 
                          }else if (key5.equals("2")) { 
-                             System.out.println("You have selected seniors radio we have this price for you ");
-                             System.out.println("show seniors radio solution ");
+                             System.out.println("Based on your selection, we have this price for you  ");
+                             System.out.println("Showing seniors radio solution ");
+                             System.out.println(solutionradioseniors.getProduct());
                              System.out.println(solutionradioseniors.getSolutionPrice());
 
                          } else if (key5.equals("3")) { 
-                             System.out.println("You have selected seniors web we have this price for you ");
-                             System.out.println("show seniors web solution ");
+                             System.out.println("Based on your selection, we have this price for you  ");
+                             System.out.println("Showing seniors web solution ");
+                             System.out.println(solutionwebseniors.getProduct());
                              System.out.println(solutionwebseniors.getSolutionPrice());
 
                          }else if (key5.equals("4")) { 
-                             System.out.println("You have selected seniors social media we have this price for you ");
-                             System.out.println("show seniors social media solution  ");
+                             System.out.println("Based on your selection, we have this price for you  ");
+                             System.out.println("Showing seniors social media solution  ");
+                             System.out.println(solutionsocialmediaseniors.getProduct());
                              System.out.println(solutionsocialmediaseniors.getSolutionPrice());
                           
                         }
@@ -538,7 +556,7 @@ System.out.println("Hello! Welcome to COSTCO");
 
     } else if (key.equals("2")) {
       System.out.println("What do you want to know");
-      System.out.println("1 .Revenue by market channel combo      2.Revenue by channel     3.product catalog                     4.Product summary");
+      System.out.println("1 .Revenue by market channel combo      2.Revenue by channel     3.Product summary  ");
       System.out.println();
       ProductSummary ps = new ProductSummary(s2p5);
       Scanner sc6 = new Scanner(System.in);
@@ -547,14 +565,14 @@ System.out.println("Hello! Welcome to COSTCO");
         System.out.println("Markets          in $");
         System.out.println("=============================");
         System.out.println("Teen Market ");
-        System.out.println("TV Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelteenmarket));
+        System.out.println("Television Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelteenmarket));
         System.out.println("Radio Channel   "+msol.getRevenueByMarketChannelCombo(radiochannelteenmarket));
         System.out.println("Web Channel     "+msol.getRevenueByMarketChannelCombo(webchannelteenmarket));
         System.out.println("SocialMedia     "+msol.getRevenueByMarketChannelCombo(socialmediachannelteenmarket));
         System.out.println("=============================");
 
-        System.out.println("college grads");
-        System.out.println("TV Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelcollegegradsmarket));
+        System.out.println("college graduate");
+        System.out.println("Television Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelcollegegradsmarket));
         System.out.println("Radio Channel   "+msol.getRevenueByMarketChannelCombo(radiochannelcollegegradsmarket));
         System.out.println("Web Channel     "+msol.getRevenueByMarketChannelCombo(webchannelcollegegradsmarket));
         System.out.println("SocialMedia     "+msol.getRevenueByMarketChannelCombo(socialmediachannelcollegegradsmarket));
@@ -562,16 +580,16 @@ System.out.println("Hello! Welcome to COSTCO");
 
 
 
-        System.out.println("Millenials");
-        System.out.println("TV Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelmillenialmarket));
-        System.out.println("Radio Channel   "+msol.getRevenueByMarketChannelCombo(radiochannelmillenialmarket));
-        System.out.println("Web Channel     "+msol.getRevenueByMarketChannelCombo(webchannelmillenialmarket));
-        System.out.println("SocialMedia     "+msol.getRevenueByMarketChannelCombo(socialmediachannelmillenialmarket));
+        System.out.println("Gen-z");
+        System.out.println("Television Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelgenZmarket));
+        System.out.println("Radio Channel   "+msol.getRevenueByMarketChannelCombo(radiochannelgenZmarket));
+        System.out.println("Web Channel     "+msol.getRevenueByMarketChannelCombo(webchannelgenZmarket));
+        System.out.println("SocialMedia     "+msol.getRevenueByMarketChannelCombo(socialmediachannelgenZmarket));
         System.out.println("=============================");
 
 
         System.out.println("seniors");
-        System.out.println("TV Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelseniorsmarket));
+        System.out.println("Television Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelseniorsmarket));
         System.out.println("Radio Channel   "+msol.getRevenueByMarketChannelCombo(radiochannelseniorsmarket));
         System.out.println("Web Channel     "+msol.getRevenueByMarketChannelCombo(webchannelseniorsmarket));
         System.out.println("SocialMedia     "+msol.getRevenueByMarketChannelCombo(socialmediachannelseniorsmarket));
@@ -579,9 +597,9 @@ System.out.println("Hello! Welcome to COSTCO");
 
 
       }else if (key6.equals("2")){ 
-        System.out.println("Revenue generated market wise  ");
+        System.out.println("Revenue generated Channel wise  ");
         System.out.println("=============================");
-        System.out.println("TV channel       "+msol.getRevenueByChannel(tvchannel));
+        System.out.println("Television channel       "+msol.getRevenueByChannel(tvchannel));
         System.out.println("Radio channel    "+msol.getRevenueByChannel(radiochannel));
         System.out.println("Web channel      "+msol.getRevenueByChannel(webchannel));
         System.out.println("Social media     "+msol.getRevenueByChannel(socialmediachannel));
@@ -591,13 +609,31 @@ System.out.println("Hello! Welcome to COSTCO");
 
       }else if (key6.equals("3")){
         System.out.println(" ");
+      ProductSummary ps1 = new ProductSummary(s2p4);
       System.out.println("================= Statistics ======================");
-      System.out.println("Product Summary for Product: " + s2p5 );
-      System.out.println("Sales Revenue: $ " + ps.getSalesRevenues());
-      System.out.println("Profit Margin:  " + ps.getProductPricePerformance());
-      System.out.println("Frequency above target:  " + ps.getNumberAboveTarget());
-      System.out.println("Frequency Below:  " + ps.getNumberBelowTarget());
+      System.out.println("Product Summary for Product: " + s2p4 );
+      System.out.println("Sales Revenue: $ " + ps1.getSalesRevenues());
+      System.out.println("Profit Margin:  " + ps1.getProductPricePerformance());
+      System.out.println("Frequency above target:  " + ps1.getNumberAboveTarget());
+      System.out.println("Frequency Below:  " + ps1.getNumberBelowTarget());
       System.out.println(" ");
+
+      ProductSummary ps2 = new ProductSummary(s1p7);
+      System.out.println("================= Statistics ======================");
+      System.out.println("Product Summary for Product: " + s1p7 );
+      System.out.println("Sales Revenue: $ " + ps2.getSalesRevenues());
+      System.out.println("Profit Margin:  " + ps2.getProductPricePerformance());
+      System.out.println("Frequency above target:  " + ps2.getNumberAboveTarget());
+      System.out.println("Frequency Below:  " + ps2.getNumberBelowTarget());
+      System.out.println(" ");
+
+      ProductSummary ps3 = new ProductSummary(s3p2);
+      System.out.println("================= Statistics ======================");
+      System.out.println("Product Summary for Product: " + s3p2 );
+      System.out.println("Sales Revenue: $ " + ps3.getSalesRevenues());
+      System.out.println("Profit Margin:  " + ps3.getProductPricePerformance());
+      System.out.println("Frequency above target:  " + ps3.getNumberAboveTarget());
+      System.out.println("Frequency Below:  " + ps3.getNumberBelowTarget());
 
       }
 

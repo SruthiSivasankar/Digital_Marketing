@@ -32,6 +32,15 @@ public class SolutionOffer {
   public void addProduct(Product p){
       products.add(p);
   }
+
+  public String getProduct(){
+    String l = new String();
+    for (Product p: products){
+        l+= "\n"+p.getName();
+    }
+    return l;
+  }
+  
   public void setTotalPrice(int p){
       price = p;
       
