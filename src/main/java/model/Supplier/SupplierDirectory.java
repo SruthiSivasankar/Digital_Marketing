@@ -22,6 +22,7 @@ public class SupplierDirectory {
       return supplier;
 
   }
+  
   public Supplier findSupplier(String id){
       
       for (Supplier supplier: suppliers){
@@ -30,7 +31,9 @@ public class SupplierDirectory {
       }
       return null;
       }
-  public ArrayList<Supplier> getSuplierList(){
+
+
+public ArrayList<Supplier> getSuplierList(){
       return suppliers;
   }
   

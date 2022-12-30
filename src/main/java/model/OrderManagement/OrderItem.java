@@ -13,6 +13,8 @@ import model.ProductManagement.Product;
  */
 public class OrderItem {
 
+    String s; 
+
     Product selectedproduct;
     
     int actualPrice;
@@ -23,6 +25,7 @@ public class OrderItem {
         p.addOrderItem(this); //make sure product links back to the item
         quantity = q;
         this.actualPrice = paidprice;
+
     }
 
     public int getOrderItemTotal() {
