@@ -59,4 +59,11 @@ public int getRevenueByMarketChannelCombo(MarketChannelAssignment mca) {
 
 }
 
+public void printSolutionInfo(SolutionOffer solution) {
+    System.out.println(solution.getProduct());
+    System.out.println("Based on your selection, we have this price for you  ");
+    System.out.println("Price : " + solution.getSolutionPrice() + " USD");
+    System.out.println("Ad :" + solution.getAd());
 }
+}
+

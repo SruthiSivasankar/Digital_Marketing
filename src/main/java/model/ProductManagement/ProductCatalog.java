@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ProductCatalog {
 
     String type;
-    ArrayList<Product> products; //list of products initially empty
+    static ArrayList<Product> products; //list of products initially empty
 
     public ProductCatalog(String n) {
         type = n;
@@ -47,7 +47,7 @@ public class ProductCatalog {
         return productsreport;
     }
 
-    public ArrayList<Product> getProductList(){
+    public static ArrayList<Product> getProductList(){
         return products;
     }
 

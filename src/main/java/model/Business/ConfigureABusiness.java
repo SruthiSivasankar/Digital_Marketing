@@ -419,28 +419,24 @@ System.out.println("Hello! Welcome to COSTCO");
             Scanner sc2 = new Scanner(System.in);
               String key2 = sc2.nextLine();
                 if (key2.equals("1")) {
-                    System.out.println(solutiontvteen.getAd());
-                    System.out.println("Based on your selection, we have this price for you ");
-                    System.out.println(solutiontvteen.getProduct());
-                   System.out.println(solutiontvteen.getSolutionPrice());
+                
+                  msol.printSolutionInfo(solutiontvteen);
               
                 }else if (key2.equals("2")) { 
-                    System.out.println(solutionradioteen.getAd());
-                    System.out.println("Based on your selection, we have this price for you  ");
-                    System.out.println(solutionradioteen.getProduct());
-                    System.out.println(solutionradioteen.getSolutionPrice());
+                    
+                    msol.printSolutionInfo(solutionradioteen);
+
 
                 } else if (key2.equals("3")) { 
-                    System.out.println(solutionwebteen.getAd());
-                    System.out.println("Based on your selection, we have this price for you  ");
-                    System.out.println(solutionwebteen.getProduct());
-                    System.out.println(solutionwebteen.getSolutionPrice());
+                    
+                    msol.printSolutionInfo(solutionwebteen);
+
+                    
 
                 }else if (key2.equals("4")) {
-                    System.out.println(solutionsocialmediateen.getAd()); 
-                    System.out.println("Based on your selection, we have this price for you  ");
-                    System.out.println(solutionsocialmediateen.getProduct());
-                    System.out.println(solutionsocialmediateen.getSolutionPrice());
+                    
+                    msol.printSolutionInfo(solutionsocialmediateen);
+
                 }
               } 
                 //college grads
@@ -450,28 +446,24 @@ System.out.println("Hello! Welcome to COSTCO");
                   Scanner sc3 = new Scanner(System.in);
                    String key3 = sc3.nextLine();
                      if (key3.equals("1")) {
-                        System.out.println(solutiontvcollegegrads.getAd());
-                         System.out.println("Based on your selection, we have this price for you  ");
-                         System.out.println(solutiontvcollegegrads.getProduct());
-                         System.out.println(solutiontvcollegegrads.getSolutionPrice());
+                        
+                         msol.printSolutionInfo(solutiontvcollegegrads);
+
 
                      }else if (key3.equals("2")) { 
-                        System.out.println(solutionradiocollegegrads.getAd());
-                         System.out.println("Based on your selection, we have this price for you  ");
-                         System.out.println(solutionradiocollegegrads.getProduct());
-                         System.out.println(solutionradiocollegegrads.getSolutionPrice());
+                        
+                         msol.printSolutionInfo(solutionradiocollegegrads);
+
 
                      } else if (key3.equals("3")) { 
-                        System.out.println(solutionwebcollegegrads.getAd());
-                         System.out.println("Based on your selection, we have this price for you  ");
-                         System.out.println(solutionwebcollegegrads.getProduct());
-                         System.out.println(solutionwebcollegegrads.getSolutionPrice());
+                        
+                         msol.printSolutionInfo(solutionwebcollegegrads);
+
 
                      }else if (key3.equals("4")) { 
-                        System.out.println(solutionsocialmediacollegegrads.getAd());
-                         System.out.println("Based on your selection, we have this price for you  ");
-                         System.out.println(solutionsocialmediacollegegrads.getProduct());
-                         System.out.println(solutionsocialmediacollegegrads.getSolutionPrice());
+                        
+                         msol.printSolutionInfo(solutionsocialmediacollegegrads);
+
                     }
                   }
                   //genZs
@@ -481,28 +473,24 @@ System.out.println("Hello! Welcome to COSTCO");
                     Scanner sc4 = new Scanner(System.in);
                      String key4 = sc4.nextLine();
                        if (key4.equals("1")) {
-                          System.out.println(solutiontvgenZ.getAd());
-                           System.out.println("Based on your selection, we have this price for you  ");
-                           System.out.println(solutiontvgenZ.getProduct());
-                           System.out.println(solutiontvgenZ.getSolutionPrice());
+                          
+                           msol.printSolutionInfo(solutiontvgenZ);
+
 
                        }else if (key4.equals("2")) { 
-                          System.out.println(solutionradiogenZ.getAd());
-                           System.out.println("Based on your selection, we have this price for you  ");
-                           System.out.println(solutionradiogenZ.getProduct());
-                           System.out.println(solutionradiogenZ.getSolutionPrice());
+                          
+                           msol.printSolutionInfo(solutionradiogenZ);
+
 
                        } else if (key4.equals("3")) { 
-                          System.out.println(solutionwebgenZ.getAd());
-                           System.out.println("Based on your selection, we have this price for you  ");
-                           System.out.println(solutionwebgenZ.getProduct());
-                           System.out.println(solutionwebgenZ.getSolutionPrice());
+                          
+                           msol.printSolutionInfo(solutionwebgenZ);
+
 
                        }else if (key4.equals("4")) { 
-                          System.out.println(solutionsocialmediagenZ.getAd());
-                           System.out.println("Based on your selection, we have this price for you  ");
-                           System.out.println(solutionsocialmediagenZ.getProduct());
-                           System.out.println(solutionsocialmediagenZ.getSolutionPrice());
+                          
+                           msol.printSolutionInfo(solutionsocialmediagenZ);
+
                       }
                     }
                     //seniors
@@ -512,28 +500,22 @@ System.out.println("Hello! Welcome to COSTCO");
                       Scanner sc5 = new Scanner(System.in);
                        String key5 = sc5.nextLine();
                          if (key5.equals("1")) {
-                            System.out.println(solutiontvseniors.getAd());
-                             System.out.println("Based on your selection, we have this price for you  ");
-                             System.out.println(solutiontvseniors.getProduct());
-                             System.out.println(solutiontvseniors.getSolutionPrice());
+                             msol.printSolutionInfo(solutiontvseniors);
 
                          }else if (key5.equals("2")) { 
-                            System.out.println(solutionradioseniors.getAd());
-                             System.out.println("Based on your selection, we have this price for you  ");
-                             System.out.println(solutionradioseniors.getProduct());
-                             System.out.println(solutionradioseniors.getSolutionPrice());
+                        
+                             msol.printSolutionInfo(solutionradioseniors);
+
 
                          } else if (key5.equals("3")) { 
-                            System.out.println(solutionwebseniors.getAd());
-                             System.out.println("Based on your selection, we have this price for you  ");
-                             System.out.println(solutionwebseniors.getProduct());
-                             System.out.println(solutionwebseniors.getSolutionPrice());
+                          
+                             msol.printSolutionInfo(solutionwebseniors);
+
 
                          }else if (key5.equals("4")) { 
-                            System.out.println(solutionsocialmediaseniors.getAd());
-                             System.out.println("Based on your selection, we have this price for you  ");
-                             System.out.println(solutionsocialmediaseniors.getProduct());
-                             System.out.println(solutionsocialmediaseniors.getSolutionPrice());
+                        
+                             msol.printSolutionInfo(solutionsocialmediaseniors);
+
                           
                         }
                       }
@@ -541,9 +523,8 @@ System.out.println("Hello! Welcome to COSTCO");
 
     } else if (key.equals("2")) {
       System.out.println("What do you want to know");
-      System.out.println("1 .Revenue by market channel combo      2.Revenue by channel     3.Product summary  ");
+      System.out.println("1 .Revenue by market channel combo      2.Revenue by channel     3.Product summary of each product  ");
       System.out.println();
-      ProductSummary ps = new ProductSummary(s2p5);
       Scanner sc6 = new Scanner(System.in);
       String key6 = sc6.nextLine();
        if (key6.equals("1")){ 
@@ -562,8 +543,6 @@ System.out.println("Hello! Welcome to COSTCO");
         System.out.println("Web Channel     "+msol.getRevenueByMarketChannelCombo(webchannelcollegegradsmarket));
         System.out.println("SocialMedia     "+msol.getRevenueByMarketChannelCombo(socialmediachannelcollegegradsmarket));
         System.out.println("=============================");
-
-
 
         System.out.println("Gen-z");
         System.out.println("Television Channel      "+msol.getRevenueByMarketChannelCombo(tvchannelgenZmarket));
@@ -593,33 +572,18 @@ System.out.println("Hello! Welcome to COSTCO");
         
 
       }else if (key6.equals("3")){
-        System.out.println(" ");
-      ProductSummary ps1 = new ProductSummary(s2p4);
-      System.out.println("================= Statistics ======================");
-      System.out.println("Product Summary for Product: " + s2p4 );
-      System.out.println("Sales Revenue: $ " + ps1.getSalesRevenues());
-      System.out.println("Profit Margin:  " + ps1.getProductPricePerformance());
-      System.out.println("Frequency above target:  " + ps1.getNumberAboveTarget());
-      System.out.println("Frequency Below:  " + ps1.getNumberBelowTarget());
-      System.out.println(" ");
 
-      ProductSummary ps2 = new ProductSummary(s1p7);
-      System.out.println("================= Statistics ======================");
-      System.out.println("Product Summary for Product: " + s1p7 );
-      System.out.println("Sales Revenue: $ " + ps2.getSalesRevenues());
-      System.out.println("Profit Margin:  " + ps2.getProductPricePerformance());
-      System.out.println("Frequency above target:  " + ps2.getNumberAboveTarget());
-      System.out.println("Frequency Below:  " + ps2.getNumberBelowTarget());
-      System.out.println(" ");
+        for (Product p: ProductCatalog.getProductList()){
+          ProductSummary ps = new ProductSummary(p);
+          System.out.println("================= Statistics ======================");
+          System.out.println("Name :"+ p.getName());
+          System.out.println("Sales Revenue: $ " + ps.getSalesRevenues());
+          System.out.println("Profit Margin:  " + ps.getProductPricePerformance());
+          System.out.println("Frequency above target:  " + ps.getNumberAboveTarget());
+          System.out.println("Frequency Below:  " + ps.getNumberBelowTarget());
+          System.out.println(" ");
 
-      ProductSummary ps3 = new ProductSummary(s3p2);
-      System.out.println("================= Statistics ======================");
-      System.out.println("Product Summary for Product: " + s3p2 );
-      System.out.println("Sales Revenue: $ " + ps3.getSalesRevenues());
-      System.out.println("Profit Margin:  " + ps3.getProductPricePerformance());
-      System.out.println("Frequency above target:  " + ps3.getNumberAboveTarget());
-      System.out.println("Frequency Below:  " + ps3.getNumberBelowTarget());
-
+        }
       }
 
 
